@@ -32,3 +32,6 @@
 .settings/
 .cproject
 .project
+
+# Extra .gitignore files
+.gitignore
