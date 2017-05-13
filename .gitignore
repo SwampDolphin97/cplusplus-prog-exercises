@@ -29,6 +29,6 @@
 *.app
 
 # Eclipse Project Files
-.settings/*
+.settings/
 .cproject
 .project
