@@ -19,7 +19,7 @@ int max(int number1, int number2) {
 
 int main() {
 
-	// Works on only integer numbers
+	// Works with only integer numbers
 
 	int number1;
 	cout << "Enter the first number: " << flush;
