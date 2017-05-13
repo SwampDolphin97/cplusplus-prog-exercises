@@ -1,0 +1,1 @@
+Write a program that inputs a character from keyboard and display its corresponding ASCII value on the screen.
