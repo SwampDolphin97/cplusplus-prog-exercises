@@ -1,0 +1,1 @@
+Redo Exercise 2.5 using a class called temp and member functions. 
