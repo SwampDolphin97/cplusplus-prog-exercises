@@ -1,0 +1,8 @@
+Write a program to print the following output using for loops
+
+1
+22
+333
+4444
+55555
+.......
