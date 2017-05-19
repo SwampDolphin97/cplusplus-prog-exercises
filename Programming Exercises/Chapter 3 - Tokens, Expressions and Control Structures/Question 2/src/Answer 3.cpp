@@ -27,7 +27,7 @@ int main() {
 	cout << "Enter the size of the vector: " << flush;
 	cin >> size;
 
-	int* intArray = createVector();
+	int* intArray = createVector(size);
 
 	cout << "An integer vector of " << size << "elements has been created." << endl;
 
