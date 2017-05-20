@@ -38,14 +38,28 @@ int main() {
 
 	cout << endl;
 	cout << "The Voting Session ENDS... All " << totalVoters << "have cast their votes." << endl;
-	cout << "Press 'ENTER' key to count the votes and view the results of this election..." << flush;
+
+	cout << endl;
+	cout << "RESULTS OF THE ELECTIONS... " << endl;
+
+	cout << endl;
+	cout << "Total no. of voters: " << totalVoters << endl;
+	cout << "No. of 'spoilt' ballots: " << nSpoiltBallots << endl;
+	cout << "No. of valid votes cast: " << (totalVoters - nSpoiltBallots) << endl;
+
+	cout << endl;
+	cout << "Votes for Candidate 1: " << count[0] << endl;
+	cout << "Votes for Candidate 2: " << count[1] << endl;
+	cout << "Votes for Candidate 3: " << count[2] << endl;
+	cout << "Votes for Candidate 4: " << count[3] << endl;
+	cout << "Votes for Candidate 5: " << count[4] << endl;
 
 	return 0;
 }
 
 bool isBallotSpoilt(int ballotNumber) {
 
-	return ballotNumber >= 1 && ballotNumber <= 5;
+	return ballotNumber < 1 || ballotNumber > 5 ;
 }
 
 void countBallot(int count[5], int ballotNumber) {
