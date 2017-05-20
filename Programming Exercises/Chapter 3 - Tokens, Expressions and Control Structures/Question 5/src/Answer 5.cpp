@@ -7,7 +7,6 @@
 
 using namespace std;
 
-
 bool isBallotSpoilt(int ballotNumber);
 void countBallot(int count[5], int ballotNumber);
 
@@ -16,26 +15,65 @@ int main() {
 	int count[5] = {0, 0, 0, 0, 0};
 	int nSpoiltBallots = 0;
 
-	cout << "The voting session begins...\nWARNING: Please enter a valid candidate number (between 1 to 5), otherwise your vote will be considered 'spoilt'." << endl;
+	cout << "The Voting Session BEGINS...\nWARNING: Please enter a valid candidate number (between 1 to 5), otherwise your vote will be considered 'spoilt'." << endl;
 
-	int const totalVoters = 25; // For testing purposes, number of voters is set to be 25.
+	int const totalVoters = 10; // For testing purposes, number of voters is set to be 10.
 
 	for(int i = 0; i < totalVoters; i++) {
 
-		int ballotNumber;
+		cout << endl;
+		cout << "Voter Number: " << i + 1 << endl;
 
+		int ballotNumber;
 		cout << "Enter the candidate number of your choice: " << flush;
 		cin >> ballotNumber;
 
-		if(!isBallotSpoilt(ballotNumber))
-			countBallot(count, ballotNumber);
-		else
+		if(isBallotSpoilt(ballotNumber))
 			nSpoiltBallots++;
+		else
+			countBallot(count, ballotNumber);
 
-		cout << "Vote has been casted... Thank you for voting." << endl;
+		cout << "Vote has been cast... Thank you for voting." << endl;
 	}
 
+	cout << endl;
+	cout << "The Voting Session ENDS... All " << totalVoters << "have cast their votes." << endl;
+	cout << "Press 'ENTER' key to count the votes and view the results of this election..." << flush;
+
 	return 0;
+}
+
+bool isBallotSpoilt(int ballotNumber) {
+
+	return ballotNumber >= 1 && ballotNumber <= 5;
+}
+
+void countBallot(int count[5], int ballotNumber) {
+
+	enum{first, second, third, fourth, fifth};
+
+	switch(ballotNumber) {
+
+	case 1:
+		count[first]++;
+		break;
+
+	case 2:
+		count[second]++;
+		break;
+
+	case 3:
+		count[third]++;
+		break;
+
+	case 4:
+		count[fourth]++;
+		break;
+
+	case 5:
+		count[fifth]++;
+		break;
+	}
 }
 
 
