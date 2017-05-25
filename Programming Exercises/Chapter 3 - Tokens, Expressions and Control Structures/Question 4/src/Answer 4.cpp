@@ -5,8 +5,11 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 
 using namespace std;
+
+float calculateValue(unsigned short int principal, float interestRate, unsigned short int nYears);
 
 int main() {
 
@@ -28,13 +31,19 @@ int main() {
 			for(int j = 0; j < INTEREST_RATE_ARRAY_SIZE; j++)
 				for(int k = 0; k < YEARS_ARRAY_SIZE; k++) {
 
-					cout << setw(15) << principal[i] << " |" << setw(22) << fixed << setprecision(2) << interestRate[j] << " |" << setw(22) << nYears[k] << " |" << endl;
+					cout << setw(15) << principal[i] << " |" << setw(22) << fixed << setprecision(2) << interestRate[j] << " |" << setw(22) << nYears[k] << " |"
+						 << " " <<fixed << setprecision(2) << calculateValue(principal[i], interestRate[j], nYears[k]) << endl;
 				}
 
 		break;
 	}
 
 	return 0;
+}
+
+float calculateValue(unsigned short int principal, float interestRate, unsigned short int nYears) {
+
+	return principal * pow((1 + interestRate), nYears);
 }
 
 
