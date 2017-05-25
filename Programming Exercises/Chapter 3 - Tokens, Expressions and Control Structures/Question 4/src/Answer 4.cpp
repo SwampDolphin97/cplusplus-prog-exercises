@@ -32,11 +32,13 @@ int main() {
 				for(int k = 0; k < YEARS_ARRAY_SIZE; k++) {
 
 					cout << setw(15) << principal[i] << " |" << setw(22) << fixed << setprecision(2) << interestRate[j] << " |" << setw(22) << nYears[k] << " |"
-						 << " " <<fixed << setprecision(2) << calculateValue(principal[i], interestRate[j], nYears[k]) << endl;
+						 << " " << setw(11) << fixed << setprecision(2) << calculateValue(principal[i], interestRate[j], nYears[k]) << endl;
 				}
 
 		break;
 	}
+
+	cout << "------------------------------------------------------------------------------" << endl;
 
 	return 0;
 }
