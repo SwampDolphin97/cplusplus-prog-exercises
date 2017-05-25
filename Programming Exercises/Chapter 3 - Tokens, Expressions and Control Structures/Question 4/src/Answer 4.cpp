@@ -4,6 +4,7 @@
  */
 
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -16,6 +17,22 @@ int main() {
 	cout << "-------------------------------------------------------------------------------" << endl;
 	cout << "Principal(P)" << "\t" << "|Interest Rate(r)" << "\t" << "|Number of Years(n)" << "\t" << "|Value(V)" << endl;
 	cout << "-------------------------------------------------------------------------------" << endl;
+
+	int const PRINCIPAL_ARRAY_SIZE = sizeof(principal) / sizeof(unsigned short int);
+	int const INTEREST_RATE_ARRAY_SIZE = sizeof(interestRate) / sizeof(float);
+	int const YEARS_ARRAY_SIZE = sizeof(nYears) / sizeof(unsigned short int);
+
+	while(true) {
+
+		for(int i = 0; i < PRINCIPAL_ARRAY_SIZE; i++)
+			for(int j = 0; j < INTEREST_RATE_ARRAY_SIZE; j++)
+				for(int k = 0; k < YEARS_ARRAY_SIZE; k++) {
+
+					cout << setw(15) << principal[i] << " |" << setw(22) << fixed << setprecision(2) << interestRate[j] << " |" << setw(22) << nYears[k] << " |" << endl;
+				}
+
+		break;
+	}
 
 	return 0;
 }
