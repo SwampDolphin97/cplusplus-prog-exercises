@@ -8,7 +8,7 @@ P: 1000, 2000, 3000, ...., 10,000
 r: 0.10, 0.11, 0.12, ...., 0.20
 n: 1, 2, 3, ...., 10
 
-Hint: P is the prinicipal amount and V is the value of money at the end of n years. This equation can be recursively written as
+Hint: P is the principal amount and V is the value of money at the end of n years. This equation can be recursively written as
 
 V = P (1 + r)
 P = V
