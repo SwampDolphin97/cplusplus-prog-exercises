@@ -1,0 +1,1 @@
+Write a program to compute the area of a triangle and a circle by overloading the area() function.

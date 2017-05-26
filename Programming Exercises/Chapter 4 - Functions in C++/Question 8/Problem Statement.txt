@@ -1,0 +1,1 @@
+Write a function that performs the same operation as that of Exercise 4.7 but takes an int value for m. Both the functions should have the same name. Write a main that calls both the functions. Use the concept of function overloading.

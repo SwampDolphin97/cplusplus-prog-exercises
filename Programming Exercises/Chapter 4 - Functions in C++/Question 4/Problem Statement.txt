@@ -1,0 +1,1 @@
+The effect of a default argument can be alternatively achieved by overloading. Discuss with an example.
