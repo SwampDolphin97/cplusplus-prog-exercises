@@ -8,15 +8,7 @@
 
 using namespace std;
 
-inline int findTotalConsumers() {
-
-	unsigned short int nDomesticUsers;
-	cout << "How many individuals are supplied electricity by the electricity board? " << flush;
-	cin >> nDomesticUsers;
-	return nDomesticUsers;
-}
-
-
+int findTotalConsumers();
 void populateData(string* consumerNames, unsigned int* unitsConsumed, int arraySize);
 float calculateBill(unsigned int unitsConsumed);
 
@@ -45,6 +37,16 @@ int main() {
 	delete [] unitsConsumed;
 
 	return 0;
+}
+
+int findTotalConsumers() {
+
+	unsigned short int nDomesticUsers;
+
+	cout << "How many individuals are supplied electricity by the electricity board? " << flush;
+	cin >> nDomesticUsers;
+
+	return nDomesticUsers;
 }
 
 void populateData(string* consumerNames, unsigned int* unitsConsumed, int const arraySize) {}
