@@ -1,6 +1,6 @@
 /*
  * Answer 10.cpp
- * 	Author: suyashd95
+ * Author: suyashd95
  */
 
 #include <iostream>
@@ -49,7 +49,25 @@ int findTotalConsumers() {
 	return nDomesticUsers;
 }
 
-void populateData(string* consumerNames, unsigned int* unitsConsumed, int const arraySize) {}
+void populateData(string* consumerNames, unsigned int* unitsConsumed, int const arraySize) {
+
+	cout << endl;
+	cout << "Entering the data of " << arraySize << " consumers..." << endl;
+
+	for(int i = 0; i < arraySize; i++) {
+
+		cout << endl << "Inputting the info about consumer " << i + 1 << endl;
+
+		cout << "Enter the Name -> " << flush;
+		cin >> consumerNames[i];
+
+		cout << "Enter the number of units consumed -> " << flush;
+		cin >> unitsConsumed[i];
+	}
+
+	cout << endl;
+	cout << "Data of all the " << arraySize << " consumers have been successfully entered." << endl;
+}
 
 float calculateBill(unsigned int unitsConsumed) { return 0.0; }
 
