@@ -13,19 +13,17 @@ int main() {
 
 	cout << "Table for Y = EXP[-X]" << endl;
 
-	cout << setfill('-') << setw(129) << "-" << endl;
+	cout << setfill('-') << setw(126) << "-" << endl;
 
-/*
- *  Code to display the header row properly
- *	cout << "|" << setfill(' ') << setw(9) << "X" << flush;
- *	cout << setw(3) << "|" << setw(10) << "0.1" << flush;
- *	cout << setw(10) << "0.2" << setw(10) << "0.3" << setw(10) << "0.4" << flush;
- *	cout << setw(10) << "0.5" << setw(10) << "0.6" << setw(10) << "0.7" << flush;
- *	cout << setw(10) << "0.8" << setw(10) << "0.9" << "|" << endl;
-*/
+	// Code for the header row of the table
+	cout << "|" << setfill(' ') << setw(4) << "X" << setw(4) << "|" << flush;
 
-	cout << setfill('-') << setw(129) << "-" << endl;
+	for(float i = 0.1; i <= 1.0; i += 0.1)
+		cout << setw(8) << i << setw(5) << "|" << flush;
 
+	cout << endl << setfill('-') << setw(126) << "-" << endl;
+
+	// Code for the data rows of the table
 	for(float i = 0.0; i <= 9.0; i += 1.0) {
 
 		cout << "|" << setfill(' ') << setw(5) << fixed << setprecision(1) << i << setw(3) << "  |" << flush;
@@ -36,7 +34,7 @@ int main() {
 		cout << endl;
 	}
 
-	cout << setfill('-') << setw(129) << "-" << endl;
+	cout << setfill('-') << setw(126) << "-" << endl;
 
 	return 0;
 
