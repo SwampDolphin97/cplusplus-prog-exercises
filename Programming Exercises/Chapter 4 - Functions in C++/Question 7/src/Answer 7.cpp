@@ -30,14 +30,16 @@ double power(double m, int n = 2) {
 
 		// Code for Scenario 2
 		result = m;
-		for(int i = 0; i >= n; i--)
+		n--;
+		for(int i = 0; i > n; i--)
 			result /= m;
 	}
 	else {
 
 		// Code for Scenario 3
 		result = m;
-		for(int i = 1; i < n; i++)
+		n--;
+		for(int i = 0; i < n; i++)
 			result *= m;
 	}
 
