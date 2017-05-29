@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-#define PI 3.141592;
+#define PI 3.141592
 
 double area(int base, int height); // Area function to calculate the area of a triangle
 double area(int radius); // Area function to calculate the area of a circle.
@@ -61,12 +61,12 @@ int main() {
 
 double area(int radius) {
 
-	return 0.0;
+	return PI * radius * radius;
 }
 
 double area(int base, int height) {
 
-	return 1.0;
+	return (base * height) / (double)2;
 }
 
 
