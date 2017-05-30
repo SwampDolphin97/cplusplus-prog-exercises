@@ -12,16 +12,24 @@ void populateData(int* dataSet, int const n);
 int findN();
 string insertSuffix(int pos);
 float calculateMean(int* dataSet, int const n);
+float calculateVariance(int* dataSet, int const n, float const mean);
+float calculateStandardDeviation(float const variance);
 
 int main() {
 
 	int const n = findN();
-	float mean;
+	float mean, variance, standardDeviation;
 
 	int* dataSet = new int[n];
 
 	populateData(dataSet, n);
 	mean = calculateMean(dataSet, n);
+	variance = calculateVariance(dataSet, n, mean);
+	standardDeviation = calculateStandardDeviation(variance);
+
+	cout << endl;
+	cout << "Variance: " << variance << endl;
+	cout << "Standard Deviation: " << standardDeviation << endl;
 
 	delete [] dataSet;
 	return 0;
@@ -70,4 +78,17 @@ float calculateMean(int* dataSet, int const n) {
 	for(int i = 0; i < n; i++)
 		sum += dataSet[i];
 	return sum / (float)n;
+}
+
+float calculateVariance(int* dataSet, int const n, float const mean) {
+
+	float sumSquaredDifference = 0;
+	for(int i = 0; i < n; i++)
+		sumSquaredDifference += pow((dataSet[i] - mean), 2);
+	return sumSquaredDifference / (float)n;
+}
+
+float calculateStandardDeviation(float const variance) {
+
+	return sqrt(variance);
 }
