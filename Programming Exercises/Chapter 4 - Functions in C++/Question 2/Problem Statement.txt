@@ -1,0 +1,1 @@
+Write a program to read a matrix of size m x n from the keyboard and display the same on the screen using functions.

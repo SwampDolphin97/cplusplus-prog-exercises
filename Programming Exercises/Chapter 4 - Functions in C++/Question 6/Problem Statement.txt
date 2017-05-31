@@ -1,0 +1,1 @@
+Redo Exercise 4.5 using inline functions. Test the function using a main program.
