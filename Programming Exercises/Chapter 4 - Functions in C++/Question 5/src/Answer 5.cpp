@@ -21,7 +21,7 @@ int main() {
 	cin >> z;
 
 	int largest = LARGEST_OF_3(x, y, z);
-	cout << "\nThe largest of the three numbers (" << x << ", " << y << ", z): " << largest << endl;
+	cout << "\nThe largest of the three numbers (" << x << ", " << y << ", " << z << "): " << largest << endl;
 
 	return 0;
 }
