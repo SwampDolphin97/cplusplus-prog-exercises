@@ -23,10 +23,14 @@ int main() {
 	cin >> degree;
 
 	double const radian = degToRad(degree);
-	cout << "The angle in radians: " << radian << endl;
 
-	double const sineValue = sin(radian);
-	cout << "Its sine value: " << sineValue << endl;
+	double const trueSine = sin(radian);
+
+	double apparentSine, term;
+	double const accuracy = 0.0001;
+
+	int nTerm = 1;
+	bool termPositive = true;
 
 	return 0;
 }
