@@ -42,10 +42,11 @@ int main() {
 		else
 			term = pow(radian, power) / factorial(power);
 
-		cout << "Power: " << power << ", Term: " << term << endl;
+		// Conditional statement to exit from the infinite 'while(true)' loop, when a term is less than accuracy i.e, 0.0001
 		if(term <= accuracy)
 			break;
 
+		// Increment the power by 2
 		power += 2;
 	}
 
