@@ -13,6 +13,8 @@ inline double degToRad(double degree) {
 	return degree * (M_PI / 180);
 }
 
+double factorial(int nTerm);
+
 int main() {
 
 	cout << "Evaluating the following function to 0.0001% accuracy using the series...\n" << endl;
@@ -32,7 +34,19 @@ int main() {
 	int nTerm = 1;
 	bool termPositive = true;
 
+
+
 	return 0;
 }
 
+// Using Recursion to calculate the factorial of a positive number.
+double factorial(int nTerm) {
+
+	int fact = 0;
+	if(nTerm == 0)
+		return 1;
+
+	fact = nTerm * factorial(nTerm - 1);
+	return fact;
+}
 
