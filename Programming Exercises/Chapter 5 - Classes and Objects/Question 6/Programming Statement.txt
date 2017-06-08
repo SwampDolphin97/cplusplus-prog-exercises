@@ -1,0 +1,1 @@
+Refer to Program 5.11 and write a function that receives two matrix objects as arguments and returns a new matrix object containing their multiplication result.
