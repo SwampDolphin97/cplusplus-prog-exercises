@@ -9,14 +9,15 @@
 class Depositor {
 
 private:
-	std::string name;
-	int accountNumber;
-	int accountType;
-	double balance;
+	static int const size;
+	std::string name[10];
+	int accountNumber[10];
+	int accountType[10];
+	double balance[10];
 
 public:
-	Depositor(): name(""), accountNumber(0), accountType(0), balance(0.00) {};
-	void assignInfo(std::string name, int accountNo, int accountType, double balance);
+	Depositor();
+	void assignInfo();
 	void depositAmount(double amount);
 	void withdrawAmount(double amount);
 	void displayInfo();
