@@ -11,18 +11,16 @@ class Depositor {
 private:
 	std::string name;
 	int accountNumber;
-	enum accountTypes {Saving, Current};
+	enum class accountTypes {None, Saving, Current};
 	int accountType;
 	double balance;
 
 public:
-	Depositor(): name(""), accountNumber(0), accountType(Saving), balance(0.00) {};
-	void assignInfo(std::string, int accountNo, int accountType, double balance);
+	Depositor(): name(""), accountNumber(0), accountType(accountTypes::Saving), balance(0.00) {};
+	void assignInfo(std::string name, int accountNo, int accountType, double balance);
 	void depositAmount(double amount);
-	double withdrawAmount(double amount);
+	void withdrawAmount(double amount);
 	void displayInfo();
 };
-
-
 
 #endif /* DEPOSITOR_H_ */
