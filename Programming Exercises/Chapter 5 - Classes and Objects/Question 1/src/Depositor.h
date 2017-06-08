@@ -11,12 +11,11 @@ class Depositor {
 private:
 	std::string name;
 	int accountNumber;
-	enum class accountTypes {None, Saving, Current};
 	int accountType;
 	double balance;
 
 public:
-	Depositor(): name(""), accountNumber(0), accountType(accountTypes::Saving), balance(0.00) {};
+	Depositor(): name(""), accountNumber(0), accountType(0), balance(0.00) {};
 	void assignInfo(std::string name, int accountNo, int accountType, double balance);
 	void depositAmount(double amount);
 	void withdrawAmount(double amount);

@@ -13,7 +13,7 @@ void Depositor::assignInfo(string name, int accountNo, int accountType, double b
 
 	this->name = name;
 	this->accountNumber = accountNo;
-	accountType == accountTypes::Saving ? this->accountType = accountTypes::Saving : this->accountType = accountTypes::Current;
+	accountType == 1 ? this->accountType = 1 : this->accountType = 2;
 	this->balance = balance;
 	cout << "Info regarding the depositor has been successful entered into our database." << endl;
 }
