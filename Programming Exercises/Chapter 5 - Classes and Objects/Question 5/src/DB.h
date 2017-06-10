@@ -18,7 +18,9 @@ public:
 	DB(): feet(0), inches(0) {};
 	void displayDistance();
 	void setDistance(int, int);
-	friend void addDistance(DB&, DM&);
+	int getFeet() const { return feet; };
+	int getInches() const { return inches; };
+	friend void addDistance(const DB&, const DM&);
 };
 
 #endif /* DB_H_ */

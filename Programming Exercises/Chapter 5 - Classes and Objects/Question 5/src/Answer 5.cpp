@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void addDistance(DB&, DM&);
+void addDistance(const DB&, const DM&);
 
 int main() {
 
@@ -41,7 +41,7 @@ int main() {
 	return 0;
 }
 
-void addDistance(DB& db, DM& dm) {
+void addDistance(const DB& db, const DM& dm) {
 
 	cout << "Choose the format in which the total distance needs to be displayed..." << endl;
 	cout << "1. In feet and inches\t2. In meters and centimeters\nPress the number corresponding to your choice: " << flush;
@@ -52,13 +52,26 @@ void addDistance(DB& db, DM& dm) {
 	switch(op) {
 
 	case 1:
+	{
+		int totalCentimeters = (dm.getMeters() * 100) + dm.getCentimeters();
+		int centimetersToInches = totalCentimeters * 0.394;
 
-		cout << "First option selected." << endl;
+		DB db2;
+		db2.setDistance(centimetersToInches / 12, centimetersToInches % 12);
+
 		break;
+	}
 	case 2:
+	{
 
-		cout << "Second option selected." << endl;
+		int totalInches = (db.getFeet() * 12) + db.getInches();
+		int inchesToCentimeters = totalInches * 2.54;
+
+		DM dm2;
+		dm2.setDistance(inchesToCentimeters / 100, inchesToCentimeters % 100);
+
 		break;
+	}
 	default:
 
 		cout << "Invalid option." << endl;
