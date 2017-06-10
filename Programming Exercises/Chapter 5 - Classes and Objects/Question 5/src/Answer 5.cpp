@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include "DB.h"
+#include "DM.h"
 
 using namespace std;
 
@@ -20,6 +21,17 @@ int main() {
 
 	db.setDistance(feet, inches);
 	db.displayDistance();
+
+	DM dm;
+
+	int meters, centimeters;
+	cout << endl;
+	cout << "Enter the distance in meters and centimeters respectively: " << flush;
+	cin >> meters;
+	cin >> centimeters;
+
+	dm.setDistance(meters, centimeters);
+	dm.displayDistance();
 
 	return 0;
 }

@@ -17,5 +17,5 @@ void DB::setDistance(int feet, int inches) {
 
 void DB::displayDistance() {
 
-	cout << "Distance displayed in the form of feet and inches -> " << feet << " ft " << inches << " in" << endl;
+	cout << "Distance displayed in feet and inches format -> " << feet << " ft " << inches << " in" << endl;
 }
