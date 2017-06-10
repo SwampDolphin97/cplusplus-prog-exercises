@@ -10,6 +10,8 @@
 
 using namespace std;
 
+void addDistance(DB&, DM&);
+
 int main() {
 
 	DB db;
@@ -33,7 +35,35 @@ int main() {
 	dm.setDistance(meters, centimeters);
 	dm.displayDistance();
 
+	cout << endl;
+	addDistance(db, dm);
+
 	return 0;
+}
+
+void addDistance(DB& db, DM& dm) {
+
+	cout << "Choose the format in which the total distance needs to be displayed..." << endl;
+	cout << "1. In feet and inches\t2. In meters and centimeters\nPress the number corresponding to your choice: " << flush;
+	int op;
+	cin >> op;
+
+	cout << endl;
+	switch(op) {
+
+	case 1:
+
+		cout << "First option selected." << endl;
+		break;
+	case 2:
+
+		cout << "Second option selected." << endl;
+		break;
+	default:
+
+		cout << "Invalid option." << endl;
+		break;
+	}
 }
 
 
