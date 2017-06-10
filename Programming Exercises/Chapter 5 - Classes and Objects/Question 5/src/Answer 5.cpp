@@ -59,6 +59,10 @@ void addDistance(const DB& db, const DM& dm) {
 		DB db2;
 		db2.setDistance(centimetersToInches / 12, centimetersToInches % 12);
 
+		int totalFeet = db.getFeet() + db2.getFeet() + ((db.getInches() + db2.getInches()) / 12);
+		int totalInches = (db.getInches() + db2.getInches()) % 12;
+
+		cout << "Total Distance displayed in the format of feet and inches -> " << totalFeet << " ft " << totalInches << " in" << endl;
 		break;
 	}
 	case 2:
@@ -69,7 +73,12 @@ void addDistance(const DB& db, const DM& dm) {
 
 		DM dm2;
 		dm2.setDistance(inchesToCentimeters / 100, inchesToCentimeters % 100);
+		dm2.displayDistance();
 
+		int totalMeters = dm.getMeters() + dm2.getMeters() + ((dm.getCentimeters() + dm2.getCentimeters()) / 100);
+		int totalCentimeters = (dm.getCentimeters() + dm2.getCentimeters()) % 100;
+
+		cout << "Total Distance displayed in the format of meters and centimeters -> " << totalMeters << " m " << totalCentimeters << " cm" << endl;
 		break;
 	}
 	default:
