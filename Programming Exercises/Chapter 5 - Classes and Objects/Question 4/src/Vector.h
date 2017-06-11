@@ -19,6 +19,7 @@ public:
 	void modifyVector();
 	void multiplyVector(float scalar);
 	std::string displayVector();
+	Vector addVectors(const Vector& v2) const;
 };
 
 #endif /* VECTOR_H_ */

@@ -85,3 +85,11 @@ string Vector::displayVector() {
 	ss << ")";
 	return ss.str();
 }
+
+Vector Vector::addVectors(const Vector& v2) const {
+
+	Vector sum;
+	for(int i = 0; i < dimensions; i++)
+		sum.values[i] = this->values[i] + v2.values[i];
+	return sum;
+}

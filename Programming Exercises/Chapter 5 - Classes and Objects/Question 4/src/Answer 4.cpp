@@ -17,10 +17,10 @@ int main() {
 	do {
 
 		int op;
-		cout << "1. Create a vector\t2. Modify vector\n3. Multiply vector by a scalar value\t4. Display a vector\n5. Exit" << endl;
+		cout << "1. Create a vector\t2. Modify vector\n3. Multiply vector by a scalar value\t4. Display a vector\n5. Add two vectors\t6. Exit" << endl;
 		cin >> op;
 
-		enum {create = 1, modify, multiply, display, exit};
+		enum {create = 1, modify, multiply, display, add, exit};
 		switch(op) {
 
 		case create:
@@ -38,6 +38,19 @@ int main() {
 		case display:
 			cout << "The values of the vector: " << vector.displayVector() << endl;
 			break;
+		case add:
+		{
+			Vector v2, v3;
+			cout << endl;
+			cout << "Creating v2 vector..." << endl;
+			v2.createVector();
+			cout << "The values of the v2 vector: " << v2.displayVector() << endl;
+			cout << endl;
+			cout << "Displaying the sum of vectors v1 and v2: " << flush;
+			v3 = vector.addVectors(v2);
+			cout << v3.displayVector() << endl;
+			break;
+		}
 		case exit:
 			cout << "Program has been terminated." << endl;
 			quit = true;
