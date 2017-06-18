@@ -21,4 +21,25 @@ public:
 	std::string displayVector();
 };
 
+namespace modclasses {
+
+int const dimensions = 3;
+
+class Vector {
+
+private:
+	float values[dimensions];
+
+public:
+	Vector();
+	void createVector();
+	void modifyVector();
+	void multiplyVector(float scalar);
+	std::string displayVector();
+	Vector addVectors(const Vector& v2) const;
+};
+
+} /* namespace modclasses */
+
 #endif /* VECTOR_H_ */
+
