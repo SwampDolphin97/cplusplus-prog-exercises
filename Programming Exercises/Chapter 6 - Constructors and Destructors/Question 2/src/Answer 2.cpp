@@ -19,7 +19,10 @@ int main() {
 	s1 = concatenation(s2, s3);
 	String s4(s1);
 
-	cout << "Welcome Statement: " << s4.getString() << endl;
+	String welcome;
+	welcome = s4;
+
+	cout << "Welcome Statement: " << welcome.getString() << endl;
 
 	return 0;
 }
