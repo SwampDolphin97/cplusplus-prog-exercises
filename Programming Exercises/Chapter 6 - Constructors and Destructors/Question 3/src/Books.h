@@ -21,6 +21,7 @@ private:
 
 public:
 	Books();
+	void bookPurchase();
 	~Books();
 };
 

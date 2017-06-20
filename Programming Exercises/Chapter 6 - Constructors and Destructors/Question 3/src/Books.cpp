@@ -6,6 +6,7 @@
 #include "Books.h"
 
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -67,6 +68,49 @@ void Books::populateData() {
 			break;
 		}
 	}
+}
+
+void Books::bookPurchase() {
+
+	string author, title;
+	cout << "Enter the author of the book: " << flush;
+	getline(cin, author, '\n');
+	cout << "Enter the title of the book: " << flush;
+	getline(cin, title, '\n');
+
+	char found = 'n';
+	for(int i = 0; i < size; i++) {
+
+		int condition1 = strcmp(this->author[i], author.c_str());
+		int condition2 = strcmp(this->title[i], title.c_str());
+
+		if(condition1 == 0 &&  condition2 == 0) {
+
+			found = 'y';
+			cout << endl;
+			cout << "Search Successful..." << endl;
+			cout << "Details of the Book:\n" << endl;
+			cout << "   Author: " << this->author[i] << endl;
+			cout << "    Title: " << this->title[i] << endl;
+			cout << "Publisher: " << this->publisher[i] << endl;
+			cout << "    Price: " << this->price[i] << endl;
+
+			unsigned int requiredCopies;
+			cout << "Please enter the number of copies required for purchase: " << flush;
+			cin >> requiredCopies;
+
+			cout << endl;
+			if(requiredCopies <= this->stock[i])
+				cout << "Total Cost: " << this->price[i] * requiredCopies << endl;
+			else
+				cout << "Required copies not in stock." << endl;
+
+			break;
+		}
+	}
+
+	if(found == 'n')
+		cout << "\nSearch Unsuccessful...\nBook is not available." << endl;
 }
 
 Books::~Books() {

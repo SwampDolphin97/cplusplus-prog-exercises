@@ -11,5 +11,8 @@ using namespace std;
 
 int main() {
 
+	Books book;
+	book.bookPurchase();
+
 	return 0;
 }
