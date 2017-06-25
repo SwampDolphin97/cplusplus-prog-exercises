@@ -72,6 +72,7 @@ void Books::populateData() {
 
 void Books::bookPurchase() {
 
+	cin.ignore();
 	string author, title;
 	cout << "Enter the author of the book: " << flush;
 	getline(cin, author, '\n');
@@ -96,21 +97,74 @@ void Books::bookPurchase() {
 			cout << "    Price: " << this->price[i] << endl;
 
 			unsigned int requiredCopies;
-			cout << "Please enter the number of copies required for purchase: " << flush;
+			cout << "\nPlease enter the number of copies required for purchase: " << flush;
 			cin >> requiredCopies;
 
 			cout << endl;
-			if(requiredCopies <= this->stock[i])
-				cout << "Total Cost: " << this->price[i] * requiredCopies << endl;
+			if(requiredCopies <= this->stock[i]) {
+
+				this->stock[i] -= requiredCopies;
+				cout << "Total Cost: " << this->price[i] * requiredCopies << endl << endl;
+			}
 			else
-				cout << "Required copies not in stock." << endl;
+				cout << "Required copies not in stock.\n" << endl;
 
 			break;
 		}
 	}
 
 	if(found == 'n')
-		cout << "\nSearch Unsuccessful...\nBook is not available." << endl;
+		cout << "\nSearch Unsuccessful...\nBook is not available.\n" << endl;
+}
+
+void Books::changePrice() {
+
+	cin.ignore();
+	cout << "Changing price of a Book in the inventory...\n" << endl;
+	string author;
+	cout << "Enter the name of the author: " << flush;
+	getline(cin >> ws, author, '\n');
+	string title;
+	cout << "Enter the title of the book: " << flush;
+	getline(cin >> ws, title, '\n');
+
+	char found = 'n';
+	for(int i = 0; i < size; i++) {
+
+		if(strcmp(this->author[i], author.c_str()) == 0 && strcmp(this->title[i], title.c_str()) == 0) {
+
+			cout << endl;
+			cout << "The current price of the book: " << price[i] << endl;
+			float newPrice = 0.00;
+			cout << "Enter the new price of the book: " << flush;
+			cin >> newPrice;
+			price[i] = newPrice;
+
+			cout << endl;
+			cout << "Price of the book has been successfully changed." << endl;
+			cout << "The new price of the book: " << price[i] << endl<< endl;
+
+			found = 'y';
+			break;
+		}
+	}
+
+	if(found == 'n')
+		cout << "\nBook not found." << endl;
+}
+
+void Books::displayInventory() {
+
+	cout << "Displaying the Book inventory....\n" << endl;
+
+	for(int i = 0; i < size; i++) {
+
+		cout << "   Author: " << author[i] << endl;
+		cout << "    Title: " << title[i] << endl;
+		cout << "Publisher: " << publisher[i] << endl;
+		cout << "    Price: " << price[i] << endl;
+		cout << endl;
+	}
 }
 
 Books::~Books() {
