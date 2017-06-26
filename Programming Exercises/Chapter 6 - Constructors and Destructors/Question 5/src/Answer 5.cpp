@@ -13,6 +13,12 @@ int main() {
 
 	Books book;
 
+	Books* p_book = &book;
+
+	void (Books::*p_bookPurchase)() = &Books::bookPurchase;
+	void (Books::*p_changePrice)() = &Books::changePrice;
+	void (Books::*p_displayInventory)() = &Books::displayInventory;
+
 	int ch;
 	do {
 
@@ -23,15 +29,15 @@ int main() {
 		switch(ch) {
 
 		case 1:
-			book.bookPurchase();
+			(p_book->*p_bookPurchase)();
 			break;
 
 		case 2:
-			book.changePrice();
+			(p_book->*p_changePrice)();
 			break;
 
 		case 3:
-			book.displayInventory();
+			(p_book->*p_displayInventory)();
 			break;
 
 		case 4:

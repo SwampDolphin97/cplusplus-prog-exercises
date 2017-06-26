@@ -24,8 +24,8 @@ private:
 public:
 	Books();
 	void bookPurchase();
-	void changePrice();
 	void displayInventory();
+	void changePrice();
 	static void showStats();
 	~Books();
 };
