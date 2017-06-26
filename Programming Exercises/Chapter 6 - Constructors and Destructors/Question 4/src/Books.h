@@ -15,6 +15,8 @@ private:
 	float* price;
 	int* stock;
 	static int const size = 5;
+	static int successfulTransactions;
+	static int unsuccessfulTransactions;
 
 private:
 	void populateData();
@@ -24,6 +26,7 @@ public:
 	void bookPurchase();
 	void changePrice();
 	void displayInventory();
+	static void showStats();
 	~Books();
 };
 

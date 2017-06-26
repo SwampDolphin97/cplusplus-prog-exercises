@@ -16,7 +16,7 @@ int main() {
 	int ch;
 	do {
 
-		cout << "1. Purchase Books\t2. Change Price\n3. Display Inventory\t4. Quit\nPlease enter your option: " << flush;
+		cout << "1. Purchase Books\t2. Change Price\n3. Display Inventory\t4. Show Statistics\n5. Quit\nPlease enter your option: " << flush;
 		cin >> ch;
 		cout << endl;
 
@@ -35,6 +35,10 @@ int main() {
 			break;
 
 		case 4:
+			Books::showStats();
+			break;
+
+		case 5:
 			cout << "Program Terminated." << endl;
 			break;
 
@@ -43,10 +47,7 @@ int main() {
 			break;
 		}
 
-	} while(ch != 4);
-
-	book.bookPurchase();
-	book.changePrice();
+	} while(ch != 5);
 
 	return 0;
 }

@@ -10,6 +10,9 @@
 
 using namespace std;
 
+int Books::successfulTransactions = 0;
+int Books::unsuccessfulTransactions = 0;
+
 Books::Books() {
 
 	stock = new int[size];
@@ -103,18 +106,24 @@ void Books::bookPurchase() {
 			cout << endl;
 			if(requiredCopies <= this->stock[i]) {
 
+				successfulTransactions++;
 				this->stock[i] -= requiredCopies;
 				cout << "Total Cost: " << this->price[i] * requiredCopies << endl << endl;
 			}
-			else
-				cout << "Required copies not in stock.\n" << endl;
+			else {
 
+				unsuccessfulTransactions++;
+				cout << "Required copies not in stock.\n" << endl;
+			}
 			break;
 		}
 	}
 
-	if(found == 'n')
+	if(found == 'n') {
+
+		unsuccessfulTransactions++;
 		cout << "\nSearch Unsuccessful...\nBook is not available.\n" << endl;
+	}
 }
 
 void Books::changePrice() {
@@ -165,6 +174,14 @@ void Books::displayInventory() {
 		cout << "    Price: " << price[i] << endl;
 		cout << endl;
 	}
+}
+
+
+void Books::showStats() {
+
+	cout << "Number of successful transactions: " << successfulTransactions << endl;
+	cout << "Number of unsuccessful transactions: " << unsuccessfulTransactions << endl;
+	cout << endl;
 }
 
 Books::~Books() {
