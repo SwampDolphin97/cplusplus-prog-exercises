@@ -1,0 +1,11 @@
+Design a class Polar which describes a point in the plane using polar coordinates radius and angle. A point in polar coordinates is shown as Point(r, a) where r = radius and a = angle.
+
+Use the overloaded + operator to add two objects of Polar.
+
+Note that we cannot add polar values of two points directly. This requires first the conversion of points into rectangular coordinates, then adding the corresponding rectangular coordinates and finally converting the result back into polar coordinates. You need to use the following trigonometric formulae:
+
+x = r * cos(a);
+y = r * sin(a);
+
+a = atan(y / x); // arc tangent 
+r = sqrt(x * x + y * y);
