@@ -16,10 +16,12 @@ private:
 public:
 	MAT();
 	MAT(int x, int y);
+	MAT(const MAT&);
 	void populateMatrix();
 	void displayMatrix();
+//	void operator =(const MAT&);
 	MAT operator +(const MAT&);
-	MAT operator -();
+	void operator -();
 	MAT operator -(const MAT&);
 	MAT operator *(const MAT&);
 	friend MAT operator *(const MAT&, const int);

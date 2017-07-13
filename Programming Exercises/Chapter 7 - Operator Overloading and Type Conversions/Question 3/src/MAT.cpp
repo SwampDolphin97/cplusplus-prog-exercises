@@ -24,12 +24,31 @@ MAT::MAT(int x, int y) {
 			for(int j = 0; j < cols; j++)
 				matrix[i][j] = 0;
 	}
-	else {
-
+	else
 		matrix = NULL;
-	}
 
 //	std::cout << "Parameterized Constructor called." << std::endl;
+}
+
+MAT::MAT(const MAT& mat) {
+
+	this->rows = mat.rows;
+	this->cols = mat.cols;
+
+	if(mat.matrix != NULL) {
+
+		this->matrix = new int*[this->rows];
+		for(int i = 0; i < this->rows; i++)
+			this->matrix[i] = new int[this->cols];
+
+		for(int i = 0; i < this->rows; i++)
+			for(int j = 0; j < this->cols; j++)
+				this->matrix[i][j] = mat.matrix[i][j];
+	}
+	else
+		this->matrix = mat.matrix;
+
+//	std::cout << "Copy Constructor called." << std::endl;
 }
 
 void MAT::populateMatrix() {
@@ -70,6 +89,33 @@ void MAT::displayMatrix() {
 	}
 	else
 		std::cout << "ERROR: Cannot display a non-existent matrix." << std::endl;
+}
+
+MAT MAT::operator +(const MAT& mat) {
+
+	if(this->matrix != NULL && mat.matrix != NULL) {
+
+		if(this->rows == mat.rows && this->cols == mat.rows) {
+
+			MAT sum(this->rows, this->cols);
+
+			for(int i = 0; i < this->rows; i++)
+				for(int j = 0; j < this->cols; j++)
+					sum.matrix[i][j] = this->matrix[i][j] + mat.matrix[i][j];
+
+			return sum;
+		}
+		else {
+
+			std::cout << "ERROR: Row and column of the two matrices involved in this operation are different." << std::endl;
+			return (MAT());
+		}
+	}
+	else {
+
+		std::cout << "ERROR: Cannot add a non-existent matrix." << std::endl;
+		return(MAT());
+	}
 }
 
 MAT::~MAT() {
