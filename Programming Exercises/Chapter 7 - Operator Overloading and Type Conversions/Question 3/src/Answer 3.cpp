@@ -14,6 +14,7 @@ int main() {
 	{
 		MAT m1;
 		cout << endl;
+		m1.populateMatrix();
 		m1.displayMatrix();
 	}
 
