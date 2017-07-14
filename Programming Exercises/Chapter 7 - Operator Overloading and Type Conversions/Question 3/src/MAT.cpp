@@ -161,6 +161,33 @@ MAT MAT::operator -() {
 	return *this;
 }
 
+MAT MAT::operator -(const MAT& mat) {
+
+	if(this->matrix != NULL && mat.matrix != NULL) {
+
+		if(this->rows == mat.rows && this->cols == mat.rows) {
+
+			MAT diff(this->rows, this->cols);
+
+			for(int i = 0; i < this->rows; i++)
+				for(int j = 0; j < this->cols; j++)
+					diff.matrix[i][j] = this->matrix[i][j] - mat.matrix[i][j];
+
+			return diff;
+		}
+		else {
+
+			std::cout << "ERROR: Row and column of the two matrices involved in this operation are different." << std::endl;
+			return (MAT());
+		}
+	}
+	else {
+
+		std::cout << "ERROR: Cannot subtract a non-existent matrix." << std::endl;
+		return (MAT());
+	}
+}
+
 MAT::~MAT() {
 
 	if(matrix != NULL) {

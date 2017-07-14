@@ -27,8 +27,13 @@ int main() {
 	m4 = m1 + m2 + m3;
 
 	MAT m5;
-	m5 = -m4;
+	m5 = m4;
 	m5.displayMatrix();
+	cout << endl;
+
+	MAT m6;
+	m6 = m4 - m3;
+	m6.displayMatrix();
 	cout << endl;
 
 	return 0;
