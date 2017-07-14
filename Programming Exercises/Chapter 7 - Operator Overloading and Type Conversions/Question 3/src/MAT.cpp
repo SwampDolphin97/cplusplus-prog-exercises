@@ -53,31 +53,35 @@ MAT::MAT(const MAT& mat) {
 
 MAT& MAT::operator =(const MAT& rhs) {
 
-	if(this->matrix != NULL) {
+	if(this != &rhs) {						// Self Assignment Check
 
-		if(this->rows == rhs.rows && this->cols == rhs.cols) {
+		if(this->matrix != NULL) {
+
+			if(this->rows == rhs.rows && this->cols == rhs.cols) {
+
+				for(int i = 0; i < this->rows; i++)
+					for(int j = 0; j < this->cols; j++)
+						this->matrix[i][j] = rhs.matrix[i][j];
+			}
+			else
+				std::cout << "ERROR: Dimensions of LHS matrix and RHS matrix are not matching. Hence, assignment not possible." << std::endl;
+		}
+		else {
+
+			this->rows = rhs.rows;
+			this->cols = rhs.cols;
+
+			this->matrix = new int*[this->rows];
+			for(int i = 0; i < this->rows; i++)
+				this->matrix[i] = new int[cols];
 
 			for(int i = 0; i < this->rows; i++)
 				for(int j = 0; j < this->cols; j++)
 					this->matrix[i][j] = rhs.matrix[i][j];
 		}
-		else
-			std::cout << "ERROR: Dimensions of LHS matrix and RHS matrix are not matching. Hence, assignment not possible." << std::endl;
-	}
-	else {
-
-		this->rows = rhs.rows;
-		this->cols = rhs.cols;
-
-		this->matrix = new int*[this->rows];
-		for(int i = 0; i < this->rows; i++)
-			this->matrix[i] = new int[cols];
-
-		for(int i = 0; i < this->rows; i++)
-			for(int j = 0; j < this->cols; j++)
-				this->matrix[i][j] = rhs.matrix[i][j];
 	}
 
+//	std::cout << "Copy Assigment Operator called." << std::endl;
 	return *this;
 }
 
@@ -146,6 +150,15 @@ MAT MAT::operator +(const MAT& mat) {
 		std::cout << "ERROR: Cannot add a non-existent matrix." << std::endl;
 		return(MAT());
 	}
+}
+
+MAT MAT::operator -() {
+
+	for(int i = 0; i < this->rows; i++)
+		for(int j = 0; j < this->cols; j++)
+			this->matrix[i][j] = -this->matrix[i][j];
+
+	return *this;
 }
 
 MAT::~MAT() {

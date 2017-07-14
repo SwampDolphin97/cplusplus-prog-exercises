@@ -23,11 +23,11 @@ int main() {
 	m3.displayMatrix();
 	cout << endl;
 
-	MAT m4(2, 2);
+	MAT m4;
 	m4 = m1 + m2 + m3;
 
 	MAT m5;
-	m5 = m4;
+	m5 = -m4;
 	m5.displayMatrix();
 	cout << endl;
 

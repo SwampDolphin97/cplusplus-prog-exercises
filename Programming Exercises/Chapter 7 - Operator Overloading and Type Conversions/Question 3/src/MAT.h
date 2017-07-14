@@ -21,7 +21,7 @@ public:
 	void displayMatrix();
 	MAT& operator =(const MAT&);
 	MAT operator +(const MAT&);
-	void operator -();
+	MAT operator -();
 	MAT operator -(const MAT&);
 	MAT operator *(const MAT&);
 	friend MAT operator *(const MAT&, const int);
