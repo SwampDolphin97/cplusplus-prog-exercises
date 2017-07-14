@@ -125,6 +125,31 @@ void MAT::displayMatrix() {
 		std::cout << "ERROR: Cannot display a non-existent matrix." << std::endl;
 }
 
+bool MAT::operator ==(const MAT& rhs) {
+
+	if(this->rows == rhs.rows && this->cols == rhs.cols) {
+
+		if(this->matrix == NULL && this->matrix == rhs.matrix) return true;
+
+		else {
+
+			bool equals = true;
+
+			for(int i = 0; i < this->rows; i++)
+				for(int j = 0; j < this->cols; j++)
+					if(this->matrix[i][j] != rhs.matrix[i][j]) {
+
+						equals = false;
+						break;
+					}
+
+			return equals;
+		}
+	}
+	else
+		return false;
+}
+
 MAT MAT::operator +(const MAT& mat) {
 
 	if(this->matrix != NULL && mat.matrix != NULL) {

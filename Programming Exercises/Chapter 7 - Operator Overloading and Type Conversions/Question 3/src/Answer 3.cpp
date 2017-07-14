@@ -19,6 +19,12 @@ int main() {
 	m2.populateMatrix();
 	cout << endl;
 
+	MAT m3, m4;
+	if(m3 == m1)
+		cout << "m3 is equal to m1." << endl;
+	else
+		cout << "m3 is not equal to m1." << endl;
+
 	MAT m3 = m1 + m2;
 	m3.displayMatrix();
 	cout << endl;

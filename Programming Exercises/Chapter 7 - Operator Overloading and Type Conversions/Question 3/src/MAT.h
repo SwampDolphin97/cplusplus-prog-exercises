@@ -20,6 +20,7 @@ public:
 	void populateMatrix();
 	void displayMatrix();
 	MAT& operator =(const MAT&);
+	bool operator ==(const MAT&);
 	MAT operator +(const MAT&);
 	MAT operator -();
 	MAT operator -(const MAT&);
