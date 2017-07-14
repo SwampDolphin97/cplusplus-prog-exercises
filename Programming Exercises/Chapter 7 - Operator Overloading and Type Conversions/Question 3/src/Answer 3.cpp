@@ -25,7 +25,10 @@ int main() {
 
 	MAT m4(2, 2);
 	m4 = m1 + m2 + m3;
-	m4.displayMatrix();
+
+	MAT m5;
+	m5 = m4;
+	m5.displayMatrix();
 	cout << endl;
 
 	return 0;

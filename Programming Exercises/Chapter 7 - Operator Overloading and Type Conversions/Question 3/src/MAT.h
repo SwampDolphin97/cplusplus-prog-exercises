@@ -19,7 +19,7 @@ public:
 	MAT(const MAT&);
 	void populateMatrix();
 	void displayMatrix();
-//	void operator =(const MAT&);
+	MAT& operator =(const MAT&);
 	MAT operator +(const MAT&);
 	void operator -();
 	MAT operator -(const MAT&);
