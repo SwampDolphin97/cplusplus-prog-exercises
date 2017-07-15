@@ -150,6 +150,36 @@ bool MAT::operator ==(const MAT& rhs) {
 		return false;
 }
 
+bool MAT::operator !=(const MAT& rhs) {
+
+	if(this->rows == rhs.rows && this->cols == rhs.cols) {
+
+		if(this->matrix == NULL && this->matrix == rhs.matrix) return false;	// Check for NULL matrix
+
+		else {
+
+			bool notEquals = false;
+
+			for(int i = 0; i < this->rows; i++)
+				for(int j = 0; j < this->cols; j++)
+					if(this->matrix[i][j] == rhs.matrix[i][j]) {
+
+						notEquals = true;
+						break;
+					}
+
+			return notEquals;
+		}
+	}
+	else
+		return true;
+}
+
+bool MAT::operator !() {						// Used for checking whether a MAT object is NULL
+
+	return this->matrix == NULL;
+}
+
 MAT MAT::operator +(const MAT& mat) {
 
 	if(this->matrix != NULL && mat.matrix != NULL) {
@@ -179,9 +209,14 @@ MAT MAT::operator +(const MAT& mat) {
 
 MAT MAT::operator -() {
 
-	for(int i = 0; i < this->rows; i++)
-		for(int j = 0; j < this->cols; j++)
-			this->matrix[i][j] = -this->matrix[i][j];
+	if(this->matrix != NULL) {
+
+		for(int i = 0; i < this->rows; i++)
+			for(int j = 0; j < this->cols; j++)
+				this->matrix[i][j] = -this->matrix[i][j];
+	}
+	else
+		std::cout << "ERROR: Cannot perform a unary - operation on a non-existent matrix" << std::endl;
 
 	return *this;
 }
