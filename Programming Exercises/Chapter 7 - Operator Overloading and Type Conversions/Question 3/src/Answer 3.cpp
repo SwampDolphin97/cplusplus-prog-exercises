@@ -13,7 +13,7 @@ int main() {
 
 	MAT m1(2, 2);
 	m1.populateMatrix();
-	-m1;
+//	-m1;
 	m1.displayMatrix();
 	cout << endl;
 
@@ -25,10 +25,10 @@ int main() {
 //	-m3;
 //	m3.displayMatrix();
 
-//	if(m1)
-//		cout << "True" << endl;
-//	else
-//		cout << "False" << endl;
+	if(!m1)
+		cout << "True" << endl;
+	else
+		cout << "False" << endl;
 
 
 //	MAT m3 = m1 + m2;

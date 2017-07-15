@@ -175,11 +175,6 @@ bool MAT::operator !=(const MAT& rhs) {
 		return true;
 }
 
-bool MAT::operator !() {						// Used for checking whether a MAT object is NULL
-
-	return this->matrix == NULL;
-}
-
 MAT MAT::operator +(const MAT& mat) {
 
 	if(this->matrix != NULL && mat.matrix != NULL) {
@@ -246,6 +241,11 @@ MAT MAT::operator -(const MAT& mat) {
 		std::cout << "ERROR: Cannot subtract a non-existent matrix." << std::endl;
 		return (MAT());
 	}
+}
+
+MAT::operator bool() {								// Used for checking NULL matrices
+
+	return this->matrix != NULL;
 }
 
 MAT::~MAT() {

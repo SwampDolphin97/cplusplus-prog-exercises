@@ -22,7 +22,6 @@ public:
 	MAT& operator =(const MAT&);
 	bool operator ==(const MAT&);
 	bool operator !=(const MAT&);
-	bool operator !();
 	MAT operator +(const MAT&);
 	MAT operator -();
 	MAT operator -(const MAT&);
@@ -30,6 +29,7 @@ public:
 	friend MAT operator *(const MAT&, const int);
 	friend MAT operator *(const int, const MAT&);
 	void transpose();
+	operator bool();
 	~MAT();
 };
 
