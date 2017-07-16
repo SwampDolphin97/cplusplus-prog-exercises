@@ -14,21 +14,23 @@ int main() {
 	MAT m1(2, 2);
 	m1.populateMatrix();
 //	-m1;
-	m1.displayMatrix();
+	m1 = m1 * 5;
+	MAT m7 = 10 * m1;
+	m7.displayMatrix();
 	cout << endl;
 
 //	MAT m2(2, 2);
 //	m2.populateMatrix();
-//	cout << endl;
 
-	MAT m3, m4;
+
+//	MAT m3, m4;
 //	-m3;
 //	m3.displayMatrix();
 
-	if(!m1)
-		cout << "True" << endl;
-	else
-		cout << "False" << endl;
+//	if(!m1)
+//		cout << "True" << endl;
+//	else
+//		cout << "False" << endl;
 
 
 //	MAT m3 = m1 + m2;

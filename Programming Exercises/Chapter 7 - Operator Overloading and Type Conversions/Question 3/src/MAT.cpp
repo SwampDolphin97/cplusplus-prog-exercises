@@ -258,3 +258,41 @@ MAT::~MAT() {
 	}
 //	std::cout << "Destructor called." << std::endl;
 }
+
+MAT operator *(const MAT& mat, const int scalar) {
+
+	if(mat.matrix != NULL) {
+
+		MAT product(mat.rows, mat.cols);
+
+		for(int i = 0; i < product.rows; i++)
+			for(int j = 0; j < product.rows; j++)
+				product.matrix[i][j] = mat.matrix[i][j] * scalar;
+
+		return product;
+	}
+	else {
+
+		std::cout << "ERROR: Cannot multiply a number with a NULL matrix." << std::endl;
+		return (MAT());
+	}
+}
+
+MAT operator *(const int scalar, const MAT& mat) {
+
+	if(mat.matrix != NULL) {
+
+		MAT product(mat.rows, mat.cols);
+
+		for(int i = 0; i < product.rows; i++)
+			for(int j = 0; j < product.rows; j++)
+				product.matrix[i][j] = mat.matrix[i][j] * scalar;
+
+		return product;
+	}
+	else {
+
+		std::cout << "ERROR: Cannot multiply a number with a NULL matrix." << std::endl;
+		return (MAT());
+	}
+}
