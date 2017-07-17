@@ -93,45 +93,6 @@ MAT& MAT::operator =(const MAT& rhs) {
 	return *this;
 }
 
-void MAT::populateMatrix() {
-
-	if(matrix != NULL) {
-
-		std::cout << "Populating a matrix of size " << rows << " x " << cols << "...\n" << std::endl;
-		for (int i = 0; i < rows; i++) {
-
-			for (int j = 0; j < cols; j++) {
-
-				std::cout << "Enter the value of matrix[" << i + 1 << "][" << j + 1 << "]: " << std::flush;
-				std::cin >> matrix[i][j];
-			}
-			std::cout << std::endl;
-		}
-
-		std::cout << "The matrix has been successfully populated." << std::endl;
-	}
-	else
-		std::cout << "ERROR: Cannot populate a non-existent matrix." << std::endl;
-}
-
-void MAT::displayMatrix() {
-
-	if(matrix != NULL) {
-
-		std::cout << "Displaying a matrix of size " << rows << " x " << cols << "...\n" << std::endl;
-		for (int i = 0; i < rows; i++) {
-
-			for (int j = 0; j < cols; j++)
-				std::cout << "matrix[" << i + 1 << "][" << j + 1 << "]: " << matrix[i][j] << std::endl;
-			std::cout << std::endl;
-		}
-
-		std::cout << "The matrix has been displayed." << std::endl;
-	}
-	else
-		std::cout << "ERROR: Cannot display a non-existent matrix." << std::endl;
-}
-
 bool MAT::operator ==(const MAT& rhs) {
 
 	if(this->rows == rhs.rows && this->cols == rhs.cols) {

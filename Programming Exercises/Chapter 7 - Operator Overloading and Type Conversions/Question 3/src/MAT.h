@@ -19,8 +19,6 @@ public:
 	MAT();
 	MAT(int x, int y);
 	MAT(const MAT&);
-	void populateMatrix();
-	void displayMatrix();
 	MAT& operator =(const MAT&);
 	bool operator ==(const MAT&);
 	bool operator !=(const MAT&);
