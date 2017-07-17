@@ -95,7 +95,6 @@ MAT& MAT::operator =(const MAT& rhs) {
 
 void MAT::populateMatrix() {
 
-
 	if(matrix != NULL) {
 
 		std::cout << "Populating a matrix of size " << rows << " x " << cols << "...\n" << std::endl;
@@ -335,4 +334,46 @@ MAT operator *(const int scalar, const MAT& mat) {
 		std::cout << "ERROR: Cannot multiply a number with a NULL matrix." << std::endl;
 		return (MAT());
 	}
+}
+
+std::ostream& operator <<(std::ostream& out, const MAT& mat) {
+
+	if(mat.matrix != NULL) {
+
+			out << "Displaying a matrix of size " << mat.rows << " x " << mat.cols << "...\n" << std::endl;
+			for (int i = 0; i < mat.rows; i++) {
+
+				for (int j = 0; j < mat.cols; j++)
+					out << "matrix[" << i + 1 << "][" << j + 1 << "]: " << mat.matrix[i][j] << std::endl;
+				out << std::endl;
+			}
+			out << "The matrix has been successfully displayed." << std::endl;
+		}
+		else
+			out << "ERROR: Cannot display a non-existent matrix." << std::endl;
+
+	return out;
+}
+
+std::istream& operator >>(std::istream&in, MAT& mat) {
+
+	if(mat.matrix != NULL) {
+
+			std::cout << "Populating a matrix of size " << mat.rows << " x " << mat.cols << "...\n" << std::endl;
+			for (int i = 0; i < mat.rows; i++) {
+
+				for (int j = 0; j < mat.cols; j++) {
+
+					std::cout << "Enter the value of matrix[" << i + 1 << "][" << j + 1 << "]: " << std::flush;
+					in >> mat.matrix[i][j];
+				}
+				std::cout << std::endl;
+			}
+
+			std::cout << "The matrix has been successfully populated." << std::endl;
+		}
+		else
+			std::cout << "ERROR: Cannot populate a non-existent matrix." << std::endl;
+
+	return in;
 }

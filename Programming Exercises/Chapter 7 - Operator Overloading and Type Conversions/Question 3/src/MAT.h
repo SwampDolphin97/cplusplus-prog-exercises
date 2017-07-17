@@ -6,6 +6,8 @@
 #ifndef MAT_H_
 #define MAT_H_
 
+#include <iostream>
+
 class MAT {
 
 private:
@@ -28,6 +30,8 @@ public:
 	MAT operator *(const MAT&);
 	friend MAT operator *(const MAT&, const int);
 	friend MAT operator *(const int, const MAT&);
+	friend std::ostream& operator <<(std::ostream&, const MAT&);
+	friend std::istream& operator >>(std::istream&, MAT&);
 	void transpose();
 	operator bool();
 	~MAT();
