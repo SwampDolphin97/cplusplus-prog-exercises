@@ -14,13 +14,20 @@ int main() {
 	MAT m1(2, 2);
 	m1.populateMatrix();
 //	-m1;
-	m1 = m1 * 5;
-	MAT m7 = 10 * m1;
-	m7.displayMatrix();
+//	m1 = m1 * 5;
+//	MAT m7 = 10 * m1;
+	m1.displayMatrix();
 	cout << endl;
 
-//	MAT m2(2, 2);
-//	m2.populateMatrix();
+	MAT m2(3, 2);
+	m2.populateMatrix();
+	m2.displayMatrix();
+	cout << endl;
+
+	MAT m3;
+	m3 = m1 * m2;
+	m3.displayMatrix();
+	cout << endl;
 
 
 //	MAT m3, m4;

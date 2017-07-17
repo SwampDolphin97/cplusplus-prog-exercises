@@ -71,13 +71,21 @@ MAT& MAT::operator =(const MAT& rhs) {
 			this->rows = rhs.rows;
 			this->cols = rhs.cols;
 
-			this->matrix = new int*[this->rows];
-			for(int i = 0; i < this->rows; i++)
-				this->matrix[i] = new int[cols];
+			if(rhs.matrix != NULL) {		// Check for a NULL matrix on RHS
 
-			for(int i = 0; i < this->rows; i++)
-				for(int j = 0; j < this->cols; j++)
-					this->matrix[i][j] = rhs.matrix[i][j];
+				this->matrix = new int*[this->rows];
+				for(int i = 0; i < this->rows; i++)
+					this->matrix[i] = new int[cols];
+
+				for(int i = 0; i < this->rows; i++)
+					for(int j = 0; j < this->cols; j++)
+						this->matrix[i][j] = rhs.matrix[i][j];
+
+			}
+			else {
+
+				this->matrix = NULL;
+			}
 		}
 	}
 
@@ -241,6 +249,38 @@ MAT MAT::operator -(const MAT& mat) {
 		std::cout << "ERROR: Cannot subtract a non-existent matrix." << std::endl;
 		return (MAT());
 	}
+}
+
+MAT MAT::operator *(const MAT& mat) {
+
+	if(this->matrix != NULL && mat.matrix != NULL) {
+
+		if(this->cols == mat.rows) {
+
+			MAT product(this->rows, mat.cols);
+			int const commonDim = this->cols;		// Or, int const commonDim = mat.rows;
+
+			for(int a = 0; a < this->rows; a++)
+				for(int c = 0; c < mat.cols; c++)
+					for(int b = 0; b < commonDim; b++)
+						product.matrix[a][c] += this->matrix[a][b] * mat.matrix[b][c];
+
+			return product;
+		}
+		else {
+
+			std::cout << "ERROR: Columns of the first operand (matrix preceding *)"
+					  << "and the Rows of the second operand (matrix following *) are different." << std::endl;
+			return (MAT());
+		}
+	}
+	else {
+
+		std::cout << "ERROR: Cannot multiply a non-existent matrix." << std::endl;
+		return (MAT());
+	}
+
+
 }
 
 MAT::operator bool() {								// Used for checking NULL matrices
