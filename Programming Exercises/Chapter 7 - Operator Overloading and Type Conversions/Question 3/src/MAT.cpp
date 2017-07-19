@@ -316,7 +316,7 @@ std::ostream& operator <<(std::ostream& out, const MAT& mat) {
 	return out;
 }
 
-std::istream& operator >>(std::istream&in, MAT& mat) {
+std::istream& operator >>(std::istream& in, MAT& mat) {
 
 	if(mat.matrix != NULL) {
 
