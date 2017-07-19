@@ -42,6 +42,14 @@ String& String::operator =(const String& rhs) {
 	return *this;
 }
 
+bool String::operator ==(const String& s) const{
+
+	if(strcmp(this->str, s.str) == 0)
+		return true;
+	else
+		return false;
+}
+
 String::~String() {
 
 	delete [] str;
