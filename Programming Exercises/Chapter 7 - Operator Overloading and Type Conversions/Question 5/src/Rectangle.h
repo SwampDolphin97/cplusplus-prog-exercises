@@ -15,6 +15,10 @@ private:
 public:
 	Rectangle();
 	Rectangle(float x, float y);
+	float getX() const;
+	float getY() const;
+	void setX(float x);
+	void setY(float y);
 	void show();
 	void putData(float x, float y);
 };

@@ -8,9 +8,37 @@
 #include <iostream>
 #include <cmath>
 
+#include "Rectangle.h"
+
 Polar::Polar(): radius(0), angle(0) { };
 
 Polar::Polar(float radius, float angle): radius(radius), angle(angle) { };
+
+Polar::Polar(const Rectangle rect) {
+
+	radius = sqrt((rect.getX() * rect.getX()) + (rect.getY() * rect.getY()));
+	angle = radToDeg(atan(rect.getY() / rect.getX()));
+}
+
+float Polar::getRadius() const {
+
+	return radius;
+}
+
+float Polar::getAngle() const {
+
+	return angle;
+}
+
+void Polar::setRadius(float radius) {
+
+	this->radius = radius;
+}
+
+void Polar::setAngle(float angle) {
+
+	this->angle = angle;
+}
 
 void Polar::show() {
 
@@ -36,7 +64,7 @@ float Polar::radToDeg(float rad) {
 Polar::operator Rectangle() {
 
 	Rectangle rect;
-	rect.x = radius * cos(degToRad(angle));
-	rect.y = radius * sin(degToRad(angle));
+	rect.setX(radius * cos(degToRad(angle)));
+	rect.setY(radius * sin(degToRad(angle)));
 	return rect;
 }
