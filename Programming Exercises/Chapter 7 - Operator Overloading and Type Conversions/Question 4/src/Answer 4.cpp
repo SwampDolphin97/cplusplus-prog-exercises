@@ -27,7 +27,13 @@ int main() {
 	cin >> s4;
 	cout << "New String: " << s4 << endl;
 
-	String s5 = "Random", s6 = "Random";
+	String s5, s6;
+
+	cout << "\nComparison time...\n" << endl;
+	cout << "String 1: " << flush;
+	cin >> s5;
+	cout << "String 2: " << flush;
+	cin >> s6;
 	if(s5 == s6)
 		cout << "The two Strings are the same." << endl;
 	else
