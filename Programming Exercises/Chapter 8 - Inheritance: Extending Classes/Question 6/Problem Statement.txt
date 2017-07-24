@@ -1,0 +1,1 @@
+In Exercise 8.3, the classes teacher, officer and typist are derived from the class staff. As we know, we can use container classes in place of inheritance in some situations. Redesign the program of Exercise 8.3 such that the classes teacher, officer and typist contain objects of staff.
