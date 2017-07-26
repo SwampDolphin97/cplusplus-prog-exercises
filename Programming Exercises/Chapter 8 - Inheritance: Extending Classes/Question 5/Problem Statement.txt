@@ -1,0 +1,1 @@
+Consider a class network of Fig 8.15. The class master derives information from both account and admin classes which in turn derive information from the class person. Define all the four classes and write a program to create, update and display the information contained in master objects.
