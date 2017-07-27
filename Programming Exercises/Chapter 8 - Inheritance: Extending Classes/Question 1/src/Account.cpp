@@ -34,3 +34,18 @@ void Account::setAccountType(const std::string accountType) {
 
 	this->accountType = accountType;
 }
+
+void Account::displayData() const {
+
+	std::cout << "Customer Name: " << customerName << std::endl;
+	std::cout << "Account Number: " << accountNumber << std::endl;
+	std::cout << "Account Type: " << accountType << std::endl;
+}
+
+void Account::populateData() {
+
+	std::cout << "Enter the customer name: " << std::flush;
+	std::cin << customerName;
+	std::cout << "Enter the account number: " << std::flush;
+	std::cin << accountNumber;
+}

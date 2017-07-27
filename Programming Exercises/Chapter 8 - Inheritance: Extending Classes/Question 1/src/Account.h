@@ -6,6 +6,7 @@
 #ifndef ACCOUNT_H_
 #define ACCOUNT_H_
 
+#include <iostream>
 #include <string>
 
 class Account {
@@ -22,6 +23,10 @@ protected:
 	void setCustomerName(const std::string);
 	void setAccountNumber(const int);
 	void setAccountType(const std::string);
+
+public:
+	void displayData() const;
+	void populateData();
 };
 
 #endif /* ACCOUNT_H_ */
