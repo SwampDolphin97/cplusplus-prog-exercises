@@ -97,9 +97,11 @@ void Cur_acct::withdrawAmount() {
 
 void Cur_acct::displayData() const {
 
+	std::cout << "Displaying customer details...\n" << std::endl;
 	Account::displayData();
 	std::cout << "Cheque Book Facility Available: Yes" << std::endl;
 	displayBalance();
+	std::cout << std::endl;
 }
 
 
