@@ -25,7 +25,7 @@ void Cur_acct::populateData() {
 		else {
 
 			std::cout << "\nERROR: Initial balance amount is less than the required minimum "
-					  << " balance amount (" << MIN_BALANCE << ").. Please try again.\n"
+					  << "balance amount (" << MIN_BALANCE << ").. Please try again.\n"
 					  << std::endl;
 		}
 	}
@@ -36,7 +36,7 @@ void Cur_acct::populateData() {
 
 void Cur_acct::displayBalance() const {
 
-	std::cout << "Current Account's Balance: " << balance << std::endl;
+	std::cout << "Current Account's Balance: " << std::fixed << std::setprecision(2) << balance << std::endl;
 }
 
 void Cur_acct::updateBalance() {
@@ -46,7 +46,7 @@ void Cur_acct::updateBalance() {
 	std::cin >> amount;
 	balance += amount;
 
-	std::cout << "\nRs. " << amount << " has been successfully deposited into your account." << std::endl;
+	std::cout << "\nRs. " << std::fixed << std::setprecision(2) << amount << " has been successfully deposited into your account." << std::endl;
 	std::cout << "New " << std::flush;
 	displayBalance();
 	std::cout << std::endl;
@@ -80,7 +80,8 @@ void Cur_acct::withdrawAmount() {
 
 	if(amount <= balance) {
 
-		std::cout << "\nRs. " << amount << " has been successfully withdrawn from your account." << std::endl;
+		balance -= amount;
+		std::cout << "\nRs. " << std::fixed << std::setprecision(2) << amount << " has been successfully withdrawn from your account." << std::endl;
 		std::cout << "Remaining " << std::flush;
 		displayBalance();
 		std::cout << std::endl;

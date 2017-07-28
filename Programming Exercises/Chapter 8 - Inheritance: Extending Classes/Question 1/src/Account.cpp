@@ -45,7 +45,7 @@ void Account::displayData() const {
 void Account::populateData() {
 
 	std::cout << "Enter the customer name: " << std::flush;
-	std::cin << customerName;
+	std::cin >> customerName;
 	std::cout << "Enter the account number: " << std::flush;
-	std::cin << accountNumber;
+	std::cin >> accountNumber;
 }

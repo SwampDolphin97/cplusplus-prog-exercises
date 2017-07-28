@@ -34,7 +34,7 @@ void Sav_acct::populateData() {
 
 void Sav_acct::displayBalance() const {
 
-	std::cout << "Savings Account's Balance: " << balance << std::endl;
+	std::cout << "Savings Account's Balance: " << std::fixed << std::setprecision(2) << balance << std::endl;
 }
 
 void Sav_acct::updateBalance() {
@@ -44,7 +44,7 @@ void Sav_acct::updateBalance() {
 	std::cin >> amount;
 	balance += amount;
 
-	std::cout << "\nRs. " << amount << " has been successfully deposited into your account." << std::endl;
+	std::cout << "\nRs. " << std::fixed << std::setprecision(2) << amount << " has been successfully deposited into your account." << std::endl;
 	std::cout << "New " << std::flush;
 	displayBalance();
 	std::cout << std::endl;
@@ -54,9 +54,12 @@ void Sav_acct::calculateInterest() {
 
 	float amount;
 
-	amount = balance * pow((1 + INTEREST_RATE / float(TIMES_COMPOUNDED_PER_YEAR)), (TIMES_COMPOUNDED_PER_YEAR * NUMBER_OF_YEARS));
+	std::cout << "Calculating Compound Interest where:\nP = " << std::fixed << std::setprecision(2) << balance << "\nR = " << INTEREST_RATE * 100
+			  << "\nn = " << TIMES_COMPOUNDED_PER_YEAR << "\nt = " << NUMBER_OF_YEARS << "\n" << std::endl;
 
-	std::cout << "Total Amount Accrued: " << amount << "\n" << std::endl;
+	balance = (amount = balance * pow((1 + INTEREST_RATE / float(TIMES_COMPOUNDED_PER_YEAR)), (TIMES_COMPOUNDED_PER_YEAR * NUMBER_OF_YEARS)));
+
+	std::cout << "Total Amount Accrued (New Savings Account Balance): " << std::fixed << std::setprecision(2) << balance << "\n" << std::endl;
 }
 
 void Sav_acct::withdrawAmount() {
@@ -67,7 +70,8 @@ void Sav_acct::withdrawAmount() {
 
 	if(amount <= balance) {
 
-		std::cout << "\nRs. " << amount << " has been successfully withdrawn from your account." << std::endl;
+		balance -= amount;
+		std::cout << "\nRs. " << std::fixed << std::setprecision(2) << amount << " has been successfully withdrawn from your account." << std::endl;
 		std::cout << "Remaining " << std::flush;
 		displayBalance();
 		std::cout << std::endl;
