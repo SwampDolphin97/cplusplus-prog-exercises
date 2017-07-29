@@ -10,7 +10,7 @@ Account::Account(std::string accountType, float balance): customerName(""), acco
 Account::Account(std::string customerName, int accountNumber, std::string accountType, float balance): customerName(customerName), accountNumber(accountNumber),
 																									   accountType(accountType), balance(balance) {}
 
-virtual void Account::populateData() {
+void Account::populateData() {
 
 	std::cout << "Enter the name of the customer: " << std::flush;
 	std::cin >> customerName;
@@ -18,12 +18,12 @@ virtual void Account::populateData() {
 	std::cin >> accountNumber;
 }
 
-virtual void Account::displayData() const {
+void Account::displayData() const {
 
 	std::cout << "Customer Name: " << customerName << std::endl;
 	std::cout << "Account Number: " << accountNumber << std::endl;
 	std::cout << "Account Type: " << accountType << std::endl;
-	std::cout << accountType << " Account Balance: " << balance << std::endl;
+	std::cout << accountType << " Account Balance: " << std::fixed << std::setprecision(2) << balance << std::endl;
 }
 
 void Account::updateBalance() {
@@ -34,7 +34,7 @@ void Account::updateBalance() {
 	balance += amount;
 
 	std::cout << "\nRs. " << std::fixed << std::setprecision(2) << amount << " has been successfully deposited into your account." << std::endl;
-	std::cout << "New " << accountType << " Account's Balance: " << balance << std::endl;
+	std::cout << "New " << accountType << " Account's Balance: " << balance << "\n" << std::endl;
 }
 
 Account::~Account() {};

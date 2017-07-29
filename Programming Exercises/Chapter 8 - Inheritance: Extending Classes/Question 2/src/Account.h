@@ -28,7 +28,7 @@ protected:
 protected:
 	Account(std::string, float balance = 0.00);
 	Account(std::string, int, std::string, float);
-	~Account();
+	virtual ~Account();
 
 public:
 	void updateBalance();
