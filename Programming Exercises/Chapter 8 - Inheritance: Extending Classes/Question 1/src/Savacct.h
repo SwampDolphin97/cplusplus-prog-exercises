@@ -18,7 +18,7 @@ private:
 	float balance;
 	static const float INTEREST_RATE = 0.1;
 	static const int TIMES_COMPOUNDED_PER_YEAR = 4;
-	static const int NUMBER_OF_YEARS  = 5;
+	static const int NUMBER_OF_YEARS = 5;
 
 public:
 	void populateData();
