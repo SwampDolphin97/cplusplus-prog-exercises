@@ -5,7 +5,7 @@
 
 #include "Officer.h"
 
-Officer::Officer(): Staff(), grade('') {}
+Officer::Officer(): Staff(), grade('\0') {}
 
 Officer::Officer(int code, std::string name, char grade): Staff(code, name), grade(grade) {};
 
