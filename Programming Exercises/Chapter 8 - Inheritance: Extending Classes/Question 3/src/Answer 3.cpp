@@ -44,17 +44,7 @@ int main() {
 		}
 		case regular:
 		{
-			cout << setw(30) << "<----Regular Options---->" << endl;
-
-			cout << "\n1. Enter the details of a regular." << endl;
-			cout << "2. Display details of a regular." << endl;
-			cout << "3. Return to the previous menu." << endl;
-			cout << "Enter the number corresponding to your choice: " << flush;
-			int rMenu;
-			cin >> rMenu;
-			cout << endl;
 			runRegular();
-
 			break;
 		}
 		case casual:
@@ -176,7 +166,44 @@ void runOfficer() {
 
 void runRegular() {
 
-	cout << "Running Regular" << endl;
+	Regular r;
+	bool exit = false;
+	do {
+
+		cout << setw(30) << "<----Regular Options---->" << endl;
+		cout << "\n1. Enter the details of a regular." << endl;
+		cout << "2. Display details of a regular." << endl;
+		cout << "3. Return to the previous menu." << endl;
+		cout << "Enter the number corresponding to your choice: " << flush;
+		int op;
+		cin >> op;
+		cout << endl;
+
+		enum {input = 1, display, ret};
+		switch(op) {
+
+		case input:
+			cout << "Entering the details of a regular...\n" << endl;
+			r.input();
+			break;
+
+		case display:
+			cout << "Displaying the details of a regular...\n" << endl;
+			r.display();
+			break;
+
+		case ret:
+			cout << "Returning to the Main Menu..." << endl;
+			exit = true;
+			break;
+
+		default:
+			cout << "ERROR: Invalid Choice. Please choose a valid option (1-3)." << endl;
+			break;
+		}
+
+		cout << endl;
+	} while(exit != true);
 }
 
 void runCasual() {
