@@ -11,9 +11,9 @@
 using namespace std;
 
 void runTeacher();
-void runOfficer(int);
-void runRegular(int);
-void runCasual(int);
+void runOfficer();
+void runRegular();
+void runCasual();
 
 int main() {
 
@@ -39,17 +39,7 @@ int main() {
 		}
 		case officer:
 		{
-			cout << setw(30) << "<----Officer Options---->" << endl;
-
-			cout << "\n1. Enter the details of an officer." << endl;
-			cout << "2. Display details of an officer." << endl;
-			cout << "3. Return to the previous menu." << endl;
-			cout << "Enter the number corresponding to your choice: " << flush;
-			int oMenu;
-			cin >> oMenu;
-			cout << endl;
-			runOfficer(oMenu);
-
+			runOfficer();
 			break;
 		}
 		case regular:
@@ -63,7 +53,7 @@ int main() {
 			int rMenu;
 			cin >> rMenu;
 			cout << endl;
-			runRegular(rMenu);
+			runRegular();
 
 			break;
 		}
@@ -78,7 +68,7 @@ int main() {
 			int cMenu;
 			cin >> cMenu;
 			cout << endl;
-			runCasual(cMenu);
+			runCasual();
 
 			break;
 		}
@@ -142,17 +132,54 @@ void runTeacher() {
 	} while(exit != true);
 }
 
-void runOfficer(int op) {
+void runOfficer() {
 
-	cout << "Running Officer" << endl;
+	Officer o;
+	bool exit = false;
+	do {
+
+		cout << setw(30) << "<----Officer Options---->" << endl;
+		cout << "\n1. Enter the details of an officer." << endl;
+		cout << "2. Display details of an officer." << endl;
+		cout << "3. Return to the previous menu." << endl;
+		cout << "Enter the number corresponding to your choice: " << flush;
+		int op;
+		cin >> op;
+		cout << endl;
+
+		enum {input = 1, display, ret};
+		switch(op) {
+
+		case input:
+			cout << "Entering the details of an officer...\n" << endl;
+			o.input();
+			break;
+
+		case display:
+			cout << "Displaying the details of an officer...\n" << endl;
+			o.display();
+			break;
+
+		case ret:
+			cout << "Returning to the Main Menu..." << endl;
+			exit = true;
+			break;
+
+		default:
+			cout << "ERROR: Invalid Choice. Please choose a valid option (1-3)." << endl;
+			break;
+		}
+
+		cout << endl;
+	} while(exit != true);
 }
 
-void runRegular(int op) {
+void runRegular() {
 
 	cout << "Running Regular" << endl;
 }
 
-void runCasual(int op) {
+void runCasual() {
 
 	cout << "Running Casual" << endl;
 }
