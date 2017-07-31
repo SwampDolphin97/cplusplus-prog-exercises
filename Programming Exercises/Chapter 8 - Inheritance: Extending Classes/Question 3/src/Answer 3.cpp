@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void runTeacher(int);
+void runTeacher();
 void runOfficer(int);
 void runRegular(int);
 void runCasual(int);
@@ -34,17 +34,7 @@ int main() {
 
 		case teacher:
 		{
-			cout << setw(30) <<"<----Teacher Options---->" << endl;
-
-			cout << "\n1. Enter the details of a teacher." << endl;
-			cout << "2. Display details of a teacher." << endl;
-			cout << "3. Return to the previous menu." << endl;
-			cout << "Enter the number corresponding to your choice: " << flush;
-			int tMenu;
-			cin >> tMenu;
-			cout << endl;
-			runTeacher(tMenu);
-
+			runTeacher();
 			break;
 		}
 		case officer:
@@ -103,18 +93,53 @@ int main() {
 			cout << "ERROR: Invalid Choice. Please choose a valid option (1-5)." << endl;
 			break;
 		}
-
 		}
-
 
 	} while(exit != true);
 
 	return 0;
 }
 
-void runTeacher(int op) {
+void runTeacher() {
 
-	cout << "Running Teacher" << endl;
+	Teacher t;
+	bool exit = false;
+	do {
+
+		cout << setw(30) << "<----Teacher Options---->" << endl;
+		cout << "\n1. Enter the details of a teacher." << endl;
+		cout << "2. Display details of a teacher." << endl;
+		cout << "3. Return to the previous menu." << endl;
+		cout << "Enter the number corresponding to your choice: " << flush;
+		int op;
+		cin >> op;
+		cout << endl;
+
+		enum {input = 1, display, ret};
+		switch(op) {
+
+		case input:
+			cout << "Entering the details of a teacher...\n" << endl;
+			t.input();
+			break;
+
+		case display:
+			cout << "Displaying the details of a teacher...\n" << endl;
+			t.display();
+			break;
+
+		case ret:
+			cout << "Returning to the Main Menu..." << endl;
+			exit = true;
+			break;
+
+		default:
+			cout << "ERROR: Invalid Choice. Please choose a valid option (1-3)." << endl;
+			break;
+		}
+
+		cout << endl;
+	} while(exit != true);
 }
 
 void runOfficer(int op) {
