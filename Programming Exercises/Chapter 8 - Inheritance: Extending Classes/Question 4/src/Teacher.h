@@ -7,8 +7,9 @@
 #define TEACHER_H_
 
 #include "Staff.h"
+#include "Education.h"
 
-class Teacher: public Staff {
+class Teacher: public Staff, public Education {
 
 private:
 	std::string subject;
@@ -22,7 +23,7 @@ protected:
 
 public:
 	Teacher();
-	Teacher(int, std::string, std::string, std::string);
+	Teacher(int, std::string, int, std::string, std::string, std::string);
 	void input();
 	void display();
 };

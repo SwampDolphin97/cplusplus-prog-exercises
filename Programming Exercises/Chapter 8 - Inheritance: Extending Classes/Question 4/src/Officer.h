@@ -7,8 +7,9 @@
 #define OFFICER_H_
 
 #include "Staff.h"
+#include "Education.h"
 
-class Officer: public Staff {
+class Officer: public Staff, public Education {
 
 private:
 	char grade;
@@ -19,7 +20,7 @@ protected:
 
 public:
 	Officer();
-	Officer(int, std::string, char);
+	Officer(int, std::string, int, std::string, char);
 	void input();
 	void display();
 };

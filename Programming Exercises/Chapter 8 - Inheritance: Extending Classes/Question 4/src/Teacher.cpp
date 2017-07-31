@@ -5,14 +5,17 @@
 
 #include "Teacher.h"
 
-Teacher::Teacher(): Staff(), subject(""), publication("") {}
+Teacher::Teacher(): Staff(), Education(), subject(""), publication("") {}
 
-Teacher::Teacher(int code, std::string name, std::string subject, std::string publication):
-		Staff(code, name), subject(subject), publication(publication) {}
+Teacher::Teacher(int code, std::string name, int genQual, std::string profQual, std::string subject, std::string publication):
+		Staff(code, name),
+		Education(genQual, profQual),
+		subject(subject), publication(publication) {}
 
 void Teacher::input() {
 
 	Staff::input();
+	Education::input();
 	std::cout << "Enter the subject: " << std::flush;
 	std::cin >> subject;
 	std::cout << "Enter the publication: " << std::flush;
@@ -22,6 +25,7 @@ void Teacher::input() {
 void Teacher::display() {
 
 	Staff::display();
+	Education::display();
 	std::cout << "Subject: " << subject << std::endl;
 	std::cout << "Publication: " << publication << std::endl;
 }

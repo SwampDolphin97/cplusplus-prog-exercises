@@ -5,13 +5,16 @@
 
 #include "Officer.h"
 
-Officer::Officer(): Staff(), grade('\0') {}
+Officer::Officer(): Staff(), Education(), grade('\0') {}
 
-Officer::Officer(int code, std::string name, char grade): Staff(code, name), grade(grade) {};
+Officer::Officer(int code, std::string name, int genQual, std::string profQual, char grade):
+		Staff(code, name), Education(genQual, profQual),
+		grade(grade) {};
 
 void Officer::input() {
 
 	Staff::input();
+	Education::input();
 	std::cout << "Enter the grade: " << std::flush;
 	std::cin >> grade;
 }
@@ -19,6 +22,7 @@ void Officer::input() {
 void Officer::display() {
 
 	Staff::display();
+	Education::display();
 	std::cout << "Grade: " << grade << std::endl;
 }
 
