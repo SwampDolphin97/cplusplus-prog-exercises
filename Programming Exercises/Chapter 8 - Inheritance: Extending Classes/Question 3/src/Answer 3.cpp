@@ -49,17 +49,7 @@ int main() {
 		}
 		case casual:
 		{
-			cout << setw(30) << "<----Casual Options---->" << endl;
-
-			cout << "\n1. Enter the details of a casual." << endl;
-			cout << "2. Display the details of a casual." << endl;
-			cout << "3. Return to the previous menu." << endl;
-			cout << "Enter the number corresponding to your choice: " << flush;
-			int cMenu;
-			cin >> cMenu;
-			cout << endl;
 			runCasual();
-
 			break;
 		}
 		case terminate:
@@ -208,5 +198,42 @@ void runRegular() {
 
 void runCasual() {
 
-	cout << "Running Casual" << endl;
+	Casual c;
+	bool exit = false;
+	do {
+
+		cout << setw(30) << "<----Casual Options---->" << endl;
+		cout << "\n1. Enter the details of a casual." << endl;
+		cout << "2. Display the details of a casual." << endl;
+		cout << "3. Return to the previous menu." << endl;
+		cout << "Enter the number corresponding to your choice: " << flush;
+		int op;
+		cin >> op;
+		cout << endl;
+
+		enum {input = 1, display, ret};
+		switch(op) {
+
+		case input:
+			cout << "Entering the details of a casual...\n" << endl;
+			c.input();
+			break;
+
+		case display:
+			cout << "Displaying the details of a casual...\n" << endl;
+			c.display();
+			break;
+
+		case ret:
+			cout << "Returning to the Main Menu..." << endl;
+			exit = true;
+			break;
+
+		default:
+			cout << "ERROR: Invalid Choice. Please choose a valid option (1-3)." << endl;
+			break;
+		}
+
+		cout << endl;
+	} while(exit != true);
 }
