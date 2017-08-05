@@ -9,5 +9,6 @@ GPU_1060::GPU_1060(): GPU("nVIDIA", "GeForce GTX 1060", "Pascal", 1280, 1506, 17
 
 void GPU_1060::display() const {
 
+	std::cout << "1060 " << std::flush;
 	GPU::display();
 }

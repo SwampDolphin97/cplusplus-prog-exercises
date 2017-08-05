@@ -9,5 +9,6 @@ CPU_i7::CPU_i7(): CPU("Intel", "i7-7700K", "7th Gen(Kaby Lake)", "Desktop", 4.2,
 
 void CPU_i7::display() const {
 
+	std::cout << "i7 " << std::flush;
 	CPU::display();
 }

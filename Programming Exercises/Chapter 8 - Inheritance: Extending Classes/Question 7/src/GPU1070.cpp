@@ -9,5 +9,6 @@ GPU_1070::GPU_1070(): GPU("nVIDIA", "GeForce GTX 1070", "Pascal", 2048, 1442, 16
 
 void GPU_1070::display() const {
 
+	std::cout << "1070 " << std::flush;
 	GPU::display();
 }

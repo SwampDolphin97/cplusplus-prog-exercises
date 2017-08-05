@@ -10,17 +10,24 @@
 #include "GPU1070.h"
 #include "GPU1060.h"
 
+#include "PCBuild.h"
+
 using namespace std;
 
 int main() {
 
-	CPU_i3().display();
-	CPU_i5().display();
-	CPU_i7().display();
+	CPU_i3 i3;
+	CPU_i5 i5;
+	CPU_i7 i7;
 
-	GPU_1060().display();
-	GPU_1070().display();
-	GPU_1080Ti().display();
+	GPU_1060 gtx1060;
+	GPU_1070 gtx1070;
+	GPU_1080Ti gtx1080ti;
+
+	PC_Build pcb;
+	pcb.display(i3, gtx1060);
+	pcb.display(i5, gtx1070);
+	pcb.display(i7, gtx1080ti);
 
 	return 0;
 }

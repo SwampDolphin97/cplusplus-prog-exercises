@@ -9,5 +9,6 @@ GPU_1080Ti::GPU_1080Ti(): GPU("nVIDIA", "GeForce GTX 1080 Ti", "Pascal", 3584, 1
 
 void GPU_1080Ti::display() const {
 
+	std::cout << "1080 Ti " << std::flush;
 	GPU::display();
 }

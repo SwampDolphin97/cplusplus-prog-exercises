@@ -9,5 +9,6 @@ CPU_i3::CPU_i3(): CPU("Intel", "i3-5010U", "7th Gen(Kaby Lake)", "Mobile", 2.1, 
 
 void CPU_i3::display() const {
 
+	std::cout << "i3 " << std::flush;
 	CPU::display();
 }

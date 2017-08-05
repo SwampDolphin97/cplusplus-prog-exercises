@@ -31,8 +31,10 @@ private:
 protected:
 	CPU();
 	CPU(std::string, std::string, std::string, std::string, float, int, bool, float, bool, int, bool, int, int, std::string);
-	virtual void display() const = 0;
 	virtual ~CPU();
+
+public:
+	virtual void display() const = 0;
 };
 
 #endif /* CPU_H_ */
