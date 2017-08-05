@@ -48,3 +48,5 @@ void GPU::display() const {
 	vrReady?std::cout << "VR Ready: Yes" << std::endl: std::cout << "VR Ready: No" << std::endl;
 	std::cout << std::endl;
 }
+
+GPU::~GPU() {}
