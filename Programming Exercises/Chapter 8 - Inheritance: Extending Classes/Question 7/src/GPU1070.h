@@ -12,6 +12,7 @@ class GPU_1070: public GPU {
 
 public:
 	GPU_1070();
+	void display() const;
 };
 
 #endif /* GPU1070_H_ */

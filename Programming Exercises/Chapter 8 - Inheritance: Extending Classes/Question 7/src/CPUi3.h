@@ -12,6 +12,7 @@ class CPU_i3: public CPU {
 
 public:
 	CPU_i3();
+	void display() const;
 };
 
 #endif /* CPUI3_H_ */

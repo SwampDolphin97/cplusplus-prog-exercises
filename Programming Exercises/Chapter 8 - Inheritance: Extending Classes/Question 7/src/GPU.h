@@ -26,10 +26,8 @@ private:
 protected:
 	GPU();
 	GPU(std::string, std::string, std::string, int, int, int, int, std::string, int, bool);
-	virtual ~GPU() = 0;
-
-public:
-	void display() const;
+	virtual void display() const = 0;
+	virtual ~GPU();
 };
 
 #endif /* GPU_H_ */

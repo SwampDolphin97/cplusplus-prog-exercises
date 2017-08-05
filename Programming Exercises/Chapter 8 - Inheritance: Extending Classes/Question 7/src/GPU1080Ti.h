@@ -12,6 +12,7 @@ class GPU_1080Ti: public GPU {
 
 public:
 	GPU_1080Ti();
+	void display() const;
 };
 
 #endif /* GPU1080TI_H_ */
