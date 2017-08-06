@@ -12,5 +12,5 @@
 
 void Circle::display_area() {
 
-	std::cout << "Area of circle = " << std::fixed << std::setprecision(2) << M_PI * x * x << std::endl;
+	std::cout << "Area of Circle = " << std::fixed << std::setprecision(2) << M_PI * x * x << std::endl;
 }
