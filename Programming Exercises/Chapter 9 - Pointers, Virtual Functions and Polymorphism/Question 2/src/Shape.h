@@ -13,7 +13,7 @@ protected:
 
 public:
 	Shape();
-	void get_data(double, double);
+	void get_data(double, double y = 0);
 	virtual void display_area();
 	virtual ~Shape();
 };
