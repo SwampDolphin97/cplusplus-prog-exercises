@@ -9,5 +9,5 @@
 
 void Triangle::display_area() {
 
-	std::cout << "Area of Triangle = " << 1 / 2 * x * y << std::endl;
+	std::cout << "Area of Triangle = " << 1 / double(2) * x * y << std::endl;
 }
