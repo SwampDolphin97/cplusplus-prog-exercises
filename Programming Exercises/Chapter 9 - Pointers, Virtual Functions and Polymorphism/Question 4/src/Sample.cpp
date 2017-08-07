@@ -18,17 +18,19 @@ void Sample::input(const int num, const float dec, const std::string str) {
 
 void Sample::swap(Sample& sample) {
 
-	int tempNum = this->num;
-	this->num = sample.num;
-	sample.num = tempNum;
+	if(this != &sample) {				// Self assignment check
 
-	float tempDec = this->dec;
-	this->dec = sample.dec;
-	sample.dec = tempDec;
+		const int tempNum = this->num;
+		const float tempDec = this->dec;
+		const std::string tempStr = this->str;
 
-	std::string tempStr = this->str;
-	this->str = sample.str;
-	sample.str = tempStr;
+		this->input(sample.num, sample.dec, sample.str);
+		sample.input(tempNum, tempDec, tempStr);
+	}
+	else {
+
+		std::cout << "ERROR: Cannot swap the values of the same object of Sample class.\n" << std::endl;
+	}
 }
 
 void Sample::display() const {
@@ -36,4 +38,5 @@ void Sample::display() const {
 	std::cout << "Number: " << num << std::endl;
 	std::cout << "Decimal: " << dec << std::endl;
 	std::cout << "String: " << str << std::endl;
+	std::cout << std::endl;
 }
