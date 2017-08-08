@@ -3,6 +3,8 @@
  * Author: suyashd95
  */
 
+/* The following program is not going to compile. */
+
 #include <iostream>
 
 #include "Rectangle.h"
@@ -13,8 +15,8 @@ using namespace std;
 
 int main() {
 
-
-		Shape* bptr = new Shape;
+/*
+		Shape* bptr = new Shape;								// Line 19 produces an compile-time error.
 		cout << "Whose area should be calculated?\n" << endl;
 		cout << "1. Rectangle\t2. Triangle\t3. Circle" << endl;
 		cout << "Please enter a corresponding value to your desired option: " << flush;
@@ -27,7 +29,7 @@ int main() {
 
 		case rectangle:
 		{
-			bptr = new Rectangle;
+			bptr = new Rectangle;								// Line 32 produces a compile-time error.
 			cout << "Enter the length and breadth of the rectangle: " << flush;
 			double length, breadth;
 			cin >> length >> breadth;
@@ -61,7 +63,7 @@ int main() {
 		}
 
 		delete bptr;
-
+*/
 	return 0;
 }
 

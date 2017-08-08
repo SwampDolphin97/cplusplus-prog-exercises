@@ -14,7 +14,7 @@ protected:
 public:
 	Shape();
 	void get_data(double, double y = 0);
-	virtual void display_area();
+	virtual void display_area() = 0;
 	virtual ~Shape();
 };
 
