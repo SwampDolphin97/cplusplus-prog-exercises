@@ -8,10 +8,6 @@
 
 #include "Shape.h"
 
-class Rectangle: public Shape {
-
-public:
-	void display_area();
-};
+class Rectangle: public Shape {};
 
 #endif /* RECTANGLE_H_ */
