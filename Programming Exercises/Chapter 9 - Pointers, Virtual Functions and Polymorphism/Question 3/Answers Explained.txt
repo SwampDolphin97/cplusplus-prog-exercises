@@ -1,0 +1,7 @@
+Explanation of the outputs of parts (a) and (b) of question 9.3:
+
+(a) After making the changes in the source code of question 9.2 as suggested by (a) part of Problem Statement of this question, the program will run without any kind of compilation or runtime errors...
+
+In my case, I removed definition of display_area() function from the Rectangle class (inherited from Shape class) and hence, when I ran the program and tried to find the area of the Rectangle shape (if chosen by the user)...
+
+Since, the derived class lacked an implementation of its own, therefore, it will implement the base class' version of display_area() function, hence, Shape::display_area() will be called.
