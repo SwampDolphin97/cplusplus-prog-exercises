@@ -16,7 +16,7 @@ using namespace std;
 int main() {
 
 /*
-		Shape* bptr = new Shape;								// Line 19 produces an compile-time error.
+		Shape* bptr;
 		cout << "Whose area should be calculated?\n" << endl;
 		cout << "1. Rectangle\t2. Triangle\t3. Circle" << endl;
 		cout << "Please enter a corresponding value to your desired option: " << flush;

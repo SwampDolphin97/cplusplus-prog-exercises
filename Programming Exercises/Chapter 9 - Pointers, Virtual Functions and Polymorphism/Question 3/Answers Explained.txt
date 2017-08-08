@@ -5,3 +5,25 @@ Explanation of the outputs of parts (a) and (b) of question 9.3:
 In my case, I removed definition of display_area() function from the Rectangle class (inherited from Shape class) and hence, when I ran the program and tried to find the area of the Rectangle shape (if chosen by the user)...
 
 Since, the derived class lacked an implementation of its own, therefore, it will implement the base class' version of display_area() function, hence, Shape::display_area() will be called.
+
+(b) Now, this is the part where things get slightly funny...
+
+If we go by the Problem Statement, and follow the instructions as mentioned in the (b) part, then the answer of both (a) and (b) part is the same... Since, we can only achieve runtime polymorphism through the use of virtual functions, hence, the display_area() function is already declared as virtual as stated in the Problem Statement of question 9.1...
+
+Hence, in my opinion, there is a typo error in the (b) part... According to me, the correct statement should be:
+
+'In addition to the above change, declare the display_area() as pure virtual in the base class shape.'
+
+In my opinion, display_area() should have been redeclared as a pure virtual function... And, hence, this is the assumption with which I have solved the (b) part of the problem.
+
+And, the answer is no output will be produced since the program will have compilation errors... 
+
+Here's the reason: By making display_area() as a pure virtual function, class Shape becomes an Abstract Base Class and hence, it cannot be instantiated and hence, we cannot create an object of Shape, either statically or dynamically (through the use of new operator). 
+
+And, since, display_area() is now pure virtual, then the responsibility of providing an implementation falls on the subclasses of Shape i.e, Rectangle, Triangle and Circle.
+
+And, a failure to achieve the above mentioned responsibility, the derived class also becomes an Abstract class, and, hence, it will also not be able to create its own instance i.e, an object.
+
+According to part (a), one of the derived class will no longer have an implementation display_area() function (in my case, Rectangle class), and hence, Rectangle class now becomes an Abstract class. 
+
+And, hence, our program will now fail since, we can't create an instance of it and hence, it becomes the source of our compilation error.
